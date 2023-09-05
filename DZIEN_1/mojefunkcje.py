@@ -3,9 +3,13 @@ import math
 
 n=100
 h=101
+
+def h(x):
+    return 3*x
 def g(x,z,y=3):
+    global n
     n = x*math.sqrt(y) - z + n
-    m = 2*z
+    m = 2*z + h(z)
     return n + m
 
 print(g(5,5.6,2))
