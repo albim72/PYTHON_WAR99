@@ -15,3 +15,27 @@ print(osoba(egzamin,"Nadia",45,True))
 
 
 
+#przykład 2
+
+def rejestracja(oplata):
+    def lista_zawodnikow():
+        return "jesteś na liście zawodników - opłata wzniesiona!"
+
+    def brak():
+        return "brak wpłaty - za 3 dni zostaniesz usunięty z listy."
+
+    def error():
+        return "błąd w kodzie opłaty: 1 - opłacono, 0 - brak, inna wartość to błąd!"
+
+    if oplata == 1:
+        return lista_zawodnikow()
+
+    elif oplata == 0:
+        return brak()
+
+    else:
+        return error()
+
+print(rejestracja(1))
+print(rejestracja(0))
+print(rejestracja(12))
