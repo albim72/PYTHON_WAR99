@@ -23,10 +23,34 @@ class Firma:
         self.nazwa = nazwa
         self.branza = branza
         self.miasto = miasto
-        
+
     def show_firma(self):
         return f'firma {self.nazwa}, branża: {self.branza}, siedziba - miasto {self.miasto}'
-        
-        
-        
+
+
+class Pracownik(Osoba,Firma):
+    def __init__(self,imie,wiek,waga,wzrost,nazwa,branza,miasto,stanowisko,wynagrodzenie):
+        Osoba.__init__(self,imie,wiek,waga,wzrost)
+        Firma.__init__(self,nazwa,branza,miasto)
+        self.stanowisko = stanowisko
+        self.wynagrodzenie = wynagrodzenie
+
+    def print_pracownik(self):
+        print(f'Dane pracownika: {self.stanowisko}, wynagrodzenie: {self.wynagrodzenie} zł')
+
+    def czypracownik(self) -> bool:
+        return True
+
+pr1 = Pracownik("Olga",31,56,167,"ABC","IT","Lublin",
+                "Project Manager", 18000)
+pr1.print_osoba()
+pr1.print_pracownik()
+print(f'czy osoba jest pracownikiem? {pr1.czypracownik()}')
+
+
+
+
+
+
+
 
